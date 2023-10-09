@@ -10,7 +10,6 @@ const navigation = [
   { name: 'Dashboard', href: '/table', current: true },
   { name: 'Edit', href: '/edit', current: false },
   { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -78,8 +77,8 @@ export default function Navbar() {
           >
             <div className="flex items-center">
               <div className="mr-2">
-                <span className="block text-sm font-medium text-white dark:text-white">John Doe</span>
-                <span className="block text-xs font-light text-gray-500 dark:text-gray-400">Sales lead</span>
+                <span className="block text-sm font-medium text-white dark:text-white">Fikri Ansyah</span>
+                <span className="block text-xs font-light text-gray-500 dark:text-gray-400">Vice President</span>
               </div>
               <Image
                 src={isMenuOpen ? '/assets/arrowUp.svg' : '/assets/arrow.svg'}

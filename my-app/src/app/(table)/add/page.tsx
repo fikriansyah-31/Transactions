@@ -3,7 +3,7 @@
 import Navbar from "@/app/navbar";
 import React, { useState } from 'react';
 
-export default function Edit() {
+export default function Add() {
   const [formData, setFormData] = useState({
     itemName: '',
     date: '',
@@ -29,7 +29,7 @@ export default function Edit() {
       <Navbar />
       <section className="bg-white dark:bg-gray-900">
         <div className="max-w-2xl px-4 py-8 mx-auto lg:py-16">
-          <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Update Transaksi</h2>
+          <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Tambah Transaksi</h2>
           <form action="#" onSubmit={handleSubmit}>
             <div className="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
               <div className="sm:col-span-2">
@@ -90,7 +90,7 @@ export default function Edit() {
                 type="submit"
                 className="text-white bg-blue-500 inline-flex items-start hover:text-white border border-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:hover:text-white"
               >
-                Update Transaksi
+                Add Transaksi
               </button>
             </div>
           </form>

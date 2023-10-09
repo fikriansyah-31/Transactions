@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         Int      @id @default(autoincrement())
+  email      String   @unique
+  password   String
+  firstName  String?
+  lastName   String?
+  transactions Transactions[]
+  profile    Profiles[]
+}
+
+model Transactions {
+  id        Int      @id @default(autoincrement())
+  item      String
+  price     Float
+  status    String
+  date      Boolean  @default(false)
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  Int
+}
+
+model Profiles {
+  id        Int    @id @default(autoincrement())
+  photo     String   // Kolom untuk menyimpan path atau URL gambar profil
+  user      User   @relation(fields: [userId], references: [id])
+  userId    Int    @unique
+}
+
+
+

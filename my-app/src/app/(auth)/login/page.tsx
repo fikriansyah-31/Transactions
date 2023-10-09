@@ -1,6 +1,20 @@
+'use client'
+
 import Image from "next/image";
+import { useRouter } from "next/navigation"; // Menggunakan useNavigation
+
 
 export default function LoginPage() {
+
+  const router = useRouter();
+
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+
+    router.push('/table');
+
+  }
+
   return (
     <div className="flex flex-col md:flex-row md:h-screen">
       <div className="bg-white flex flex-col items-center justify-center w-full md:w-1/2">
@@ -16,7 +30,7 @@ export default function LoginPage() {
             <h1 className="text-2xl font-bold">Masuk ke akun kamu </h1>
             <p className="mt-2 text-gray-600">Belajar gratis di yoursite.io, dan memulai karir yang kamu cita-cita sejak dalam embrio!</p>
           </div>
-          <form className="mt-8 space-y-6">
+          <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="email" className="block font-bold text-gray-700">
                 Email address
@@ -51,18 +65,16 @@ export default function LoginPage() {
               Ingat saya
             </label>
             </div>
-            <div>
-              <button
+            <button
                 type="submit"
                 className="w-full px-4 py-3 font-bold text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700"
               >
                 Masuk
               </button>
-            </div>
             <div className="flex items-center justify-center mt-6">
               <span className="mr-1">Belum punya akun? </span>
               <a
-                href="#"
+                href="/register"
                 className="text-sm text-blue-600 hover:text-gray-900"
               >
                  Create an account

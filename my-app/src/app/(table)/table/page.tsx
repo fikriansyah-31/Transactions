@@ -9,8 +9,16 @@ export default function TablePage() {
     <div className="min-h-screen bg-white">
       <Navbar />
       <div className="mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <div className="overflow-x-auto">
-          <div className="py-2 align-middle inline-block min-w-full">
+        <div className="overflow-x-auto mt-5">
+        <Link legacyBehavior href="/add" passHref>
+  <a className="inline-flex items-center px-4 py-2 bg-blue-800 border border-transparent 
+            rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700
+             active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300
+              disabled:opacity-25 transition ease-in-out duration-150">
+                Add Trasaksi
+  </a>
+  </Link>
+          <div className="py-2 align-middle inline-block min-w-full mt-5">
             <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                  {/* Search input */}
               <div className="flex-shrink-0 hidden sm:block">
